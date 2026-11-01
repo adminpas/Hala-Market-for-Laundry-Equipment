@@ -1,11 +1,11 @@
-import AdvisorClient from "@/components/AdvisorClient";
+import AuctionsClient from "@/components/AuctionsClient";
 
 export const dynamic = "force-dynamic";
 export const metadata = {
-  title: "مستشار المشروع الذكي",
-  description: "دراسة جدوى، إرشاد قبل المزاد، ومتابعة ذكية بعد التركيب لضمان استدامة مشروعك.",
+  title: "المزاد الحصري",
+  description: "مزادات شهرية وموسمية على معدات ومعدات متكاملة — عروض سرية وإعلان الفائز في نهاية المزاد.",
 };
 
-export default function AdvisorPage() {
-  return <AdvisorClient />;
+export default function AuctionsPage() {
+  return <AuctionsClient />;
 }
