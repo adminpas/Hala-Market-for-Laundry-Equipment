@@ -1,11 +1,13 @@
-import AuctionsClient from "@/components/AuctionsClient";
+import { getBundles } from "@/lib/bundles";
+import BundlesClient from "@/components/BundlesClient";
 
 export const dynamic = "force-dynamic";
 export const metadata = {
-  title: "المزاد الحصري",
-  description: "مزادات شهرية وموسمية على معدات ومعدات متكاملة — عروض سرية وإعلان الفائز في نهاية المزاد.",
+  title: "العروض المتكاملة — مغسلة جاهزة",
+  description: "باقات متكاملة لتجهيز مغسلة عادية أو متوسطة أو مركزية أو فندق أو مستشفى بصفقة واحدة.",
 };
 
-export default function AuctionsPage() {
-  return <AuctionsClient />;
+export default async function BundlesPage() {
+  const bundles = await getBundles();
+  return <BundlesClient bundles={JSON.parse(JSON.stringify(bundles))} />;
 }
