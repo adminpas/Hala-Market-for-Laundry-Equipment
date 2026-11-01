@@ -1,11 +1,11 @@
-import { requireAdmin } from "@/lib/auth";
-import AdminLogin from "@/components/admin/AdminLogin";
-import SystemCheckClient from "@/components/admin/SystemCheckClient";
+import VerifyClient from "@/components/VerifyClient";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "الفحص الشامل للنظام" };
+export const metadata = {
+  title: "التحقق من بطاقة المعدة",
+  description: "تحقق من الهوية الرقمية وسجل الصيانة لأي معدة قبل الشراء.",
+};
 
-export default async function SystemPage() {
-  if (!(await requireAdmin())) return <AdminLogin />;
-  return <SystemCheckClient />;
+export default function VerifyPage() {
+  return <VerifyClient />;
 }
