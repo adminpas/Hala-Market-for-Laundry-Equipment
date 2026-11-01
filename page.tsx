@@ -1,11 +1,11 @@
-import SpecialClient from "@/components/SpecialClient";
+import { requireAdmin } from "@/lib/auth";
+import AdminLogin from "@/components/admin/AdminLogin";
+import SystemCheckClient from "@/components/admin/SystemCheckClient";
 
 export const dynamic = "force-dynamic";
-export const metadata = {
-  title: "الطلبات الخاصة والاستيراد",
-  description: "اطلب أي معدة أو جهاز غير متوفر — نؤمّنه لك من داخل المملكة أو دول الخليج أو نستورده من أي دولة.",
-};
+export const metadata = { title: "الفحص الشامل للنظام" };
 
-export default function SpecialPage() {
-  return <SpecialClient />;
+export default async function SystemPage() {
+  if (!(await requireAdmin())) return <AdminLogin />;
+  return <SystemCheckClient />;
 }
